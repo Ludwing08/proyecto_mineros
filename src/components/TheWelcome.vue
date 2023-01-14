@@ -8,7 +8,7 @@
             <div class="col-md-3">
                 <button v-on:click="buscar" type="submit" class="btn btn-primary">Buscar</button>
             </div>
-            <div class="col-md-6" v-if="ok">
+            <div class="col-md-6" v-if="estado">
                 <label for="inputEmail4" class="form-label">Nombre</label>
                 <div type="email" class="form-control" id="inputEmail4" placeholder="Ej. Juan"
                     disabled> {{ empleado.NOM_EMP }}  </div>                 
@@ -20,7 +20,7 @@
                     disabled>             
             </div>
 
-            <div class="col-md-6" v-if="ok">
+            <div class="col-md-6" v-if="estado">
                 <label for="inputEmail4" class="form-label">Apellido</label>
                 <div type="email" class="form-control" id="inputEmail4" placeholder="Ej. Lara" disabled>
                     {{ empleado.APE_EMP }}
@@ -60,9 +60,7 @@ export default {
                 console.log(response.data)                
                 this.empleado = {}
                 this.empleado = response.data;
-                if (response.status == 404){
-                    console.log('adsa')
-                }                
+                this.estado = true                   
             })
         }
     }
