@@ -1,0 +1,30 @@
+<template>
+  <main>
+
+    <div style="background-color: white;">
+      <div class="video-wrap">
+        <video id="video" playsinline autoplay></video>
+      </div>
+
+      <!-- Trigger canvas web API -->
+      <div class="controller">
+        <button id="snap">Capture</button>
+      </div>
+
+      <!-- Webcam video snapshot -->
+      <canvas id="canvas" width="640" height="480"></canvas>
+    </div> 
+  </main>
+</template>
+
+
+
+<style>
+@media (min-width: 1024px) {
+  .about {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+}
+</style>
